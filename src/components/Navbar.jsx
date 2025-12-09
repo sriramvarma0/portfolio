@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Mail, Menu, X } from 'lucide-react'
+import profileImg from '../assets/profile.jpg'
 
 export default function Navbar(){
   const [open, setOpen] = useState(false)
@@ -16,7 +17,7 @@ export default function Navbar(){
     <header role="banner" className="sticky top-0 z-30 bg-white/70 backdrop-blur-sm border-b border-gray-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-8 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img src="/src/assets/profile.jpg" alt="profile" className="w-10 h-10 rounded-full border border-gray-200 object-cover" />
+          <img src={profileImg} alt="profile" className="w-10 h-10 rounded-full border border-gray-200 object-cover" />
           <div>
             <div className="text-sm font-semibold">SRIRAM VARMA BHUPATHIRAJU</div>
             <div className="text-xs text-gray-600">Cloud & Frontend Engineer</div>

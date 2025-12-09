@@ -8,6 +8,7 @@ import Certifications from './components/Certifications'
 import Experience from './components/Experience'
 import { projectsData } from './data'
 import { motion } from 'framer-motion'
+import profileImg from './assets/profile.jpg'
 
 export default function App() {
   return (
@@ -30,7 +31,7 @@ export default function App() {
           </div>
           <aside className="card">
             <div className="flex items-center gap-4">
-              <img src="/src/assets/profile.jpg" alt="profile" className="w-20 h-20 rounded-full object-cover border border-gray-200" />
+              <img src={profileImg} alt="profile" className="w-20 h-20 rounded-full object-cover border border-gray-200" />
               <div>
                 <div className="font-semibold">SRIRAM VARMA BHUPATHIRAJU</div>
                 <div className="text-sm text-gray-600">Cloud & Frontend Engineer</div>
