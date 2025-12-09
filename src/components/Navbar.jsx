@@ -8,11 +8,11 @@ export default function Navbar(){
   const linkClass = 'block py-2 text-sm hover:text-gray-700'
 
   const navItems = [
-    { id: '#skills', label: 'Skills' },
-    { id: '#projects', label: 'Projects' },
-    { id: '#certifications', label: 'Certifications' },
-    { id: '#about', label: 'About' },
-    { id: '#contact', label: 'Contact' }
+    { id: '#skills', label: 'Skills', Icon: null },
+    { id: '#projects', label: 'Projects', Icon: null },
+    { id: '#certifications', label: 'Certifications', Icon: null },
+    { id: '#about', label: 'About', Icon: null },
+    { id: '#contact', label: 'Contact', Icon: Mail }
   ]
 
   const handleNavClick = (e, id) => {
@@ -39,10 +39,11 @@ export default function Navbar(){
               key={id}
               href={id}
               onClick={(e) => handleNavClick(e, id)}
-              className="px-3 py-2 rounded-full hover:text-gray-900 hover:bg-gray-50 transition-colors"
+              className="px-3 py-2 rounded-full hover:text-gray-900 hover:bg-gray-50 transition-colors flex items-center gap-2"
               whileTap={{ scale: 0.94 }}
             >
               {label}
+              {Icon ? <Icon size={14} className="translate-y-[1px]" /> : null}
             </motion.a>
           ))}
         </nav>
@@ -62,10 +63,11 @@ export default function Navbar(){
                 key={id}
                 href={id}
                 onClick={(e) => handleNavClick(e, id)}
-                className={linkClass}
+                className={`${linkClass} flex items-center gap-2`}
                 whileTap={{ scale: 0.96 }}
               >
                 {label}
+                {Icon ? <Icon size={16} className="translate-y-[1px]" /> : null}
               </motion.a>
             ))}
           </div>
