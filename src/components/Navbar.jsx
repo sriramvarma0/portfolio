@@ -1,10 +1,19 @@
 import React, { useState } from 'react'
 import { Mail, Menu, X } from 'lucide-react'
+import { motion } from 'framer-motion'
 import profileImg from '../assets/profile.jpg'
 
 export default function Navbar(){
   const [open, setOpen] = useState(false)
   const linkClass = 'block py-2 text-sm hover:text-gray-700'
+
+  const navItems = [
+    { id: '#skills', label: 'Skills' },
+    { id: '#projects', label: 'Projects' },
+    { id: '#certifications', label: 'Certifications' },
+    { id: '#about', label: 'About' },
+    { id: '#contact', label: 'Contact' }
+  ]
 
   const handleNavClick = (e, id) => {
     e.preventDefault()
@@ -20,16 +29,22 @@ export default function Navbar(){
           <img src={profileImg} alt="profile" className="w-10 h-10 rounded-full border border-gray-200 object-cover" />
           <div>
             <div className="text-sm font-semibold">SRIRAM VARMA BHUPATHIRAJU</div>
-            <div className="text-xs text-gray-600">Cloud & Frontend Engineer</div>
+            <div className="text-xs text-gray-600">Cloud & Software Engineer</div>
           </div>
         </div>
 
-        <nav role="navigation" aria-label="Primary" className="hidden md:flex items-center gap-6 text-sm">
-          <a href="#skills" onClick={(e) => handleNavClick(e, '#skills')} className="hover:text-gray-700">Skills</a>
-          <a href="#projects" onClick={(e) => handleNavClick(e, '#projects')} className="hover:text-gray-700">Projects</a>
-          <a href="#certifications" onClick={(e) => handleNavClick(e, '#certifications')} className="hover:text-gray-700">Certifications</a>
-          <a href="#about" onClick={(e) => handleNavClick(e, '#about')} className="hover:text-gray-700">About</a>
-          <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="flex items-center gap-2 hover:text-gray-700"><Mail size={14} /> Contact</a>
+        <nav role="navigation" aria-label="Primary" className="hidden md:flex items-center gap-4 text-sm">
+          {navItems.map(({ id, label, Icon }) => (
+            <motion.a
+              key={id}
+              href={id}
+              onClick={(e) => handleNavClick(e, id)}
+              className="px-3 py-2 rounded-full hover:text-gray-900 hover:bg-gray-50 transition-colors"
+              whileTap={{ scale: 0.94 }}
+            >
+              {label}
+            </motion.a>
+          ))}
         </nav>
 
         <div className="md:hidden">
@@ -42,11 +57,17 @@ export default function Navbar(){
       {open && (
         <div className="md:hidden border-t border-gray-100 bg-white">
           <div className="max-w-6xl mx-auto px-4 py-4">
-            <a href="#skills" onClick={(e) => handleNavClick(e, '#skills')} className={linkClass}>Skills</a>
-            <a href="#projects" onClick={(e) => handleNavClick(e, '#projects')} className={linkClass}>Projects</a>
-            <a href="#certifications" onClick={(e) => handleNavClick(e, '#certifications')} className={linkClass}>Certifications</a>
-            <a href="#about" onClick={(e) => handleNavClick(e, '#about')} className={linkClass}>About</a>
-            <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className={linkClass + ' flex items-center gap-2'}><Mail size={14} /> Contact</a>
+            {navItems.map(({ id, label, Icon }) => (
+              <motion.a
+                key={id}
+                href={id}
+                onClick={(e) => handleNavClick(e, id)}
+                className={linkClass}
+                whileTap={{ scale: 0.96 }}
+              >
+                {label}
+              </motion.a>
+            ))}
           </div>
         </div>
       )}

@@ -8,7 +8,7 @@ export const projectsData = [
   {
     id: 'movie-reco',
     title: 'Movie Recommendation System on AWS',
-    year: '2024–2025',
+    year: '2024',
     description:
       'Cloud-based recommendation system using AWS Personalize and SageMaker for real-time suggestions. Deployed with CloudFormation integrating Lambda, API Gateway, and DynamoDB with CI/CD automation.',
     tech: ['AWS Personalize', 'SageMaker', 'Lambda', 'DynamoDB', 'GitHub Actions'],
@@ -26,7 +26,7 @@ export const projectsData = [
   {
     id: 'cicd-pipeline',
     title: 'CI/CD Pipeline Project',
-    year: '2024',
+    year: '2025',
     description:
       'Containerized app deployed via Jenkins pipeline and automated build/test/push stages to DockerHub, with images deployed to AWS EC2 for production simulation.',
     tech: ['Docker', 'Jenkins', 'GitHub Actions', 'AWS EC2'],
