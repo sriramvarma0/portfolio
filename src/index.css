@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Small utility tweaks to mimic premium product page */
+.card {
+  @apply bg-white border border-gray-200 rounded-2xl p-6 shadow-sm;
+}
+
+.chip {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-sm border border-gray-200 bg-white;
+}
+
+/* Hero heading style */
+.hero-lead {
+  font-weight: 300;
+}
+
+/* Subtle focus ring for accessibility */
+input:focus, textarea:focus, button:focus, a:focus {
+  @apply outline-none ring-2 ring-gray-200 rounded;
+}
+
+/* Motion helper */
+.reduce-motion {
+  @media (prefers-reduced-motion: reduce) {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Typographic scale and spacing to create premium white-space */
+h1, h2, h3, h4 {
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: 2.15rem; }
+h2 { font-size: 1.25rem; }
+h3 { font-size: 1.1rem; }
+
+.max-w-6xl { max-width: 82rem; }
+
+/* subtle divider for large sections */
+.section-divider { border-top: 1px solid #f3f4f6; margin-top: 2rem; padding-top: 2rem; }
