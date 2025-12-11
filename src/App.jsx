@@ -70,7 +70,7 @@ export default function App() {
 
         {/* Projects */}
         <motion.section id="projects" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="mb-16">
-          <h2 className="text-2xl font-semibold mb-6">Selected Projects</h2>
+          <h2 className="text-2xl font-semibold mb-6">Projects</h2>
           <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {projectsData.map((p, idx) => (
               <ProjectCard key={p.id} index={idx} project={p} />
