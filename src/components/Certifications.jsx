@@ -97,9 +97,8 @@ export default function Certifications(){
         <h4 className="font-semibold mb-3">Certifications</h4>
         <div className="grid sm:grid-cols-2 gap-3 text-gray-800">
           {certs.map((c, idx) => (
-            <motion.button
+            <motion.div
               key={c.name}
-              onClick={() => setSelectedCert(c)}
               className="border border-gray-200 p-3 rounded-xl flex items-center gap-3 group text-left w-full"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -107,26 +106,37 @@ export default function Certifications(){
               transition={{ duration: 0.35, delay: idx * 0.08 }}
               whileHover={{ y: -4, boxShadow: '0 12px 30px rgba(0,0,0,0.08)' }}
             >
-              {c.badge ? (
-                <img
-                  src={c.badge}
-                  alt={c.name}
-                  className={`w-[6.25rem] h-[6.25rem] rounded-3xl border border-gray-100 bg-white ${
-                    c.badge === oracleFoundationsBadge ? 'object-cover p-0.5' : 'object-contain'
-                  }`}
-                />
-              ) : (
-                <span className="w-[6.25rem] h-[6.25rem] rounded-3xl border border-gray-100 bg-gray-50 flex items-center justify-center text-gray-500">
-                  <Award size={26} />
-                </span>
-              )}
-              <div className="flex-1">
-                <div className="font-medium leading-snug group-hover:text-gray-900">{c.name}</div>
-                <span className="inline-flex mt-2 px-2 py-1 text-xs rounded-full bg-gray-900 text-white">
-                  View Certificate
-                </span>
+              <div 
+                onClick={() => window.open(c.link, '_blank')}
+                className="flex items-center gap-3 flex-1 cursor-pointer"
+              >
+                {c.badge ? (
+                  <img
+                    src={c.badge}
+                    alt={c.name}
+                    className={`w-[6.25rem] h-[6.25rem] rounded-3xl border border-gray-100 bg-white ${
+                      c.badge === oracleFoundationsBadge ? 'object-cover p-0.5' : 'object-contain'
+                    }`}
+                  />
+                ) : (
+                  <span className="w-[6.25rem] h-[6.25rem] rounded-3xl border border-gray-100 bg-gray-50 flex items-center justify-center text-gray-500">
+                    <Award size={26} />
+                  </span>
+                )}
+                <div className="flex-1">
+                  <div className="font-medium leading-snug group-hover:text-gray-900">{c.name}</div>
+                  <span 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedCert(c);
+                    }}
+                    className="inline-flex mt-2 px-2 py-1 text-xs rounded-full bg-gray-900 text-white hover:bg-gray-700 cursor-pointer transition-colors"
+                  >
+                    View Certificate
+                  </span>
+                </div>
               </div>
-            </motion.button>
+            </motion.div>
           ))}
         </div>
       </motion.div>
