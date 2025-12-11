@@ -9,6 +9,7 @@ import Experience from './components/Experience'
 import { projectsData } from './data'
 import { motion } from 'framer-motion'
 import profileImg from './assets/profile.jpg'
+import resumePdf from './assets/resume.pdf'
 import { MapPin, Mail as MailIcon, Linkedin, Github } from 'lucide-react'
 
 export default function App() {
@@ -27,7 +28,7 @@ export default function App() {
             </p>
             <div className="mt-8 flex gap-4">
               <a href="#projects" className="inline-block bg-black text-white px-6 py-3 rounded-full font-medium">View Projects</a>
-              <a href="/resume.pdf" className="inline-block border border-gray-200 px-6 py-3 rounded-full">Download Resume</a>
+              <a href={resumePdf} download="SRIRAM-VARMA-BHUPATHIRAJU-Resume.pdf" className="inline-block border border-gray-200 px-6 py-3 rounded-full">Download Resume</a>
             </div>
           </div>
           <motion.aside

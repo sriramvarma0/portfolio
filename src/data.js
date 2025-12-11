@@ -1,8 +1,8 @@
 // src/data.js
 
-import movieImg from './assets/movie.jpg'
-import homestayImg from './assets/homestay.jpg'
-import cicdImg from './assets/cicd.jpg'
+import movieRecommendationImg from './assets/movie-recommendation-system.jpg'
+import touristHomestayImg from './assets/tourist-homestay-platform.jpg'
+import cicdPipelineImg from './assets/cicd-pipeline.jpg'
 
 export const projectsData = [
   {
@@ -12,7 +12,7 @@ export const projectsData = [
     description:
       'Cloud-based recommendation system using AWS Personalize and SageMaker for real-time suggestions. Deployed with CloudFormation integrating Lambda, API Gateway, and DynamoDB with CI/CD automation.',
     tech: ['AWS Personalize', 'SageMaker', 'Lambda', 'DynamoDB', 'GitHub Actions'],
-    image: movieImg
+    image: movieRecommendationImg
   },
   {
     id: 'tourist-homestay',
@@ -21,7 +21,7 @@ export const projectsData = [
     description:
       'Full-stack Java-Spring Boot platform connecting tourists with homestays and nearby attractions with role-based modules and booking flows.',
     tech: ['Java', 'Spring Boot', 'HTML', 'CSS', 'JavaScript'],
-    image: homestayImg
+    image: touristHomestayImg
   },
   {
     id: 'cicd-pipeline',
@@ -30,6 +30,6 @@ export const projectsData = [
     description:
       'Containerized app deployed via Jenkins pipeline and automated build/test/push stages to DockerHub, with images deployed to AWS EC2 for production simulation.',
     tech: ['Docker', 'Jenkins', 'GitHub Actions', 'AWS EC2'],
-    image: cicdImg
+    image: cicdPipelineImg
   }
 ]
